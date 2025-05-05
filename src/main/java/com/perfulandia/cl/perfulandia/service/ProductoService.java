@@ -33,4 +33,13 @@ public class ProductoService {
         productoRepository.deleteById(id);
     }
 
+
+    public List<Producto> findByName(String name){
+        return productoRepository.findByNombreContainingIgnoreCase(name);
+    }
+
+    public List<Producto> findByCategory(String categoria){
+        return productoRepository.findByCategoria(categoria);
+    }
+
 }
