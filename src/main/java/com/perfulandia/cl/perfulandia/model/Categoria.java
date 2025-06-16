@@ -6,12 +6,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+@Entity
+@Table
+@Repository
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Repository
-@Entity(name = "producto")
-public class Producto {
+public class Categoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,16 +20,5 @@ public class Producto {
 
     @Column(length = 40, nullable = false)
     private String nombre;
-
-    @Column(nullable = false)
-    private Integer precio;
-
-    @Column(nullable = false)
-    private Integer stock;
-
-    @ManyToOne
-    @JoinColumn(name = "categoria_id")
-    private Categoria categoria;
-
 
 }
