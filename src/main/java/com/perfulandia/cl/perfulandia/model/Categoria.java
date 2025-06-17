@@ -14,6 +14,10 @@ import org.springframework.stereotype.Repository;
 @NoArgsConstructor
 public class Categoria {
 
+    public Categoria(String nombre) {
+        this.nombre = nombre;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
